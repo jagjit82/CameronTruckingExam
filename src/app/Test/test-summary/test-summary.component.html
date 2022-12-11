@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0"> Test Summary </h4>
+                    </div>
+                    <div class="card-body">
+                     
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <tr><td>Test Name</td>
+                                        
+                                        <td>{{testResultDetails[0].testResult.test.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Id </td><td>{{email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Question </td><td>{{questionCount}}</td>
+                                    </tr>
+                                    <tr><td>Correct Answer Count</td><td>{{correctAns}}</td>
+                                        
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody>
+                                    <button mat-raised-button type="button" [routerLink]="'/logout'" class="btn btn-danger pull-left">Close</button>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+

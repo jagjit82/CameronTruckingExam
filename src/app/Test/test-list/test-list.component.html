@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0">Questions </h4>
+                    </div>
+                    <div class="card-body">
+                  
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>
+                                       {{count+1}}. {{questions[count].questn}}
+                                    </th>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                        <mat-radio-group aria-label="Select an option" [(ngModel)]="question">
+                                            <div class="row">
+                                                <div class="col-md-3">  
+                                            <mat-radio-button value="optionA" [disabled]="disableFlag" (change)="radioClick(questions[count],'optionA')" >{{questions[count].optionA}}</mat-radio-button>
+                                            <button *ngIf="disableFlag==true  && checkA==false" mat-raised-button  type="button" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i  class="material-icons">close</i>
+                                            </button><button *ngIf="disableFlag==true && checkA==true" mat-raised-button  type="button" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                                <i  class="material-icons">check</i>
+                                            </button> 
+                                            </div></div>
+
+                                            
+                                            <div class="row">
+                                                <div class="col-md-3">  
+                                            <mat-radio-button value="optionB" [disabled]="disableFlag" (change)="radioClick(questions[count],'optionB')">{{questions[count].optionB}}</mat-radio-button>
+                                            <button *ngIf="disableFlag==true && checkB==false" mat-raised-button  type="button" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i  class="material-icons">close</i>
+                                            </button><button *ngIf="disableFlag==true && checkB==true" mat-raised-button  type="button" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                                <i  class="material-icons">check</i>
+                                            </button> 
+                                            </div></div>
+                                            
+                                            
+                                            <div class="row">
+                                            <div class="col-md-3">  
+                                        <mat-radio-button value="optionC" [disabled]="disableFlag" (change)="radioClick(questions[count],'optionC')">{{questions[count].optionC}}</mat-radio-button>
+                                        <button *ngIf="disableFlag==true && checkC==false" mat-raised-button  type="button" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i  class="material-icons">close</i>
+                                        </button><button *ngIf="disableFlag==true && checkC==true" mat-raised-button  type="button" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                            <i  class="material-icons">check</i>
+                                        </button>
+                                        </div></div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-3">  
+                                        <mat-radio-button value="optionD" [disabled]="disableFlag" (change)="radioClick(questions[count],'optionD')">{{questions[count].optionD}}</mat-radio-button>
+                                        <button *ngIf="disableFlag==true && checkD==false" mat-raised-button  type="button" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i  class="material-icons">close</i>
+                                        </button> <button *ngIf="disableFlag==true && checkD==true" mat-raised-button  type="button" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                            <i  class="material-icons">check</i>
+                                        </button> 
+                                       
+                                        </div></div>
+                                          </mat-radio-group>
+
+                                        </tr>
+    
+                                </tbody>
+                                <!-- <button mat-raised-button type="button"  (click)="prev()" class="btn btn-danger pull-left">prev</button> -->
+                                <button mat-raised-button type="button" (click)="next()" *ngIf="(count)<questions?.length" class="btn btn-danger pull-left">Next Question</button>
+                                <button mat-raised-button type="button" (click)="submit()" *ngIf="(count)==questions?.length" class="btn btn-danger pull-left">Submit Test</button>
+                            </table>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+
+  
